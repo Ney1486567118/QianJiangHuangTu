@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> <!-- 引用本地 Bootstrap 文件 -->
+        <link rel="stylesheet" href="../css/pause.css">
+        <link rel="stylesheet" href="../css/tem_solo.css"> 
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+
+                background-image: url('../../images/general\ camp.png'); /* 改改改！ 背景图片 */
+                
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed; /* 背景固定 */
+                animation: fadeIn 1s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="pause-btn" class="pause-btn" src="../../images/pause.png" alt="Pause">
+        
+        <iframe src="../../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+
+        <div class="container-fluid">
+            <!-- 剧情内容 -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- 人物框 -->
+                    <div class="person">
+
+                        <!-- 改改改！ 人物图片！-->
+                        <img class="personn" src="../../images/general.webp">
+                    
+                    </div>
+                    <div class="character-name-box">
+                        <p id="character-name"></p>
+                    </div>
+                    <!-- 对话框 -->
+                    <div class="dialogue-box">
+                        <p id="dialogue-text"></+p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="../js/7.2.js"></script> <!-- 改改改！ -->
+        
+        <script src="../js/pause.js"></script>
+        <script src="../js/auto_save.js"></script>
+        <script src="../../bootstrap/js/bootstrap.min.js"></script> <!-- 引用本地 Bootstrap JS 文件 -->
+    </body>
+</html>

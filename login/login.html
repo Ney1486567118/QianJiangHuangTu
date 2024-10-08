@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途 - 登录</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body >
+    <div id="musicIframeContainer" style="display:none;">
+        <iframe src="../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+    </div>
+    <div class="floating-elements"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+    </div>
+    <div class="login-container">
+        <div class="login-box" id="login-box">
+            <h2 class="login-title">登基之路</h2>
+            <form id="login-form">
+                <div class="txtb">
+                    <label for="username">帝王之名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入帝王之名" required>
+                </div>
+                <div class="txtb">
+                    <label for="password">秘藏密钥</label>
+                    <input type="password" id="password" name="password" placeholder="请输入秘钥" required>
+                </div>
+                <button type="submit" class="login-btn" onclick="gameBtn()" >登基</button>
+                
+                <p class="signup-link">尚未加冕？<a href="#" id="signUp">注册帝王之名</a></p>
+            </form>
+
+            <!-- 注册表单 -->
+            <form id="signup-form" style="display: none;">
+                <div class="txtb1">
+                    <label for="new-username">帝王之名</label>
+                    <input type="text" id="new-username" name="new-username" placeholder="请输入帝王之名" required>
+                </div>
+                <div class="txtb1">
+                    <label for="new-password">秘藏密钥</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="秘钥长度不少于6个字符" required>
+                </div>
+                <div class="txtb1">
+                    <label for="confirm-password">确认秘钥</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入秘钥" required>
+                </div>
+                <button type="submit" class="login-btn" onclick="gameBtn()">踏上权力之路</button>
+                <p class="signup-link">已有王座？<a href="#" id="signIn">立即登基</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

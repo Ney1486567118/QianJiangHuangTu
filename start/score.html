@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont'; /* 自定义字体名称 */
+            src: url('../fonts/字体2.ttf') format('truetype'); /* 使用你上传的字体文件 */
+        }
+        body,html{
+            font-family: CustomFont;
+        }
+         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("../images/bkg.png");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-weight: bolder;
+        }
+        .title {
+            font-size: xxx-large;
+            color: #8b4513;
+            margin-top: 50px;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            padding: 15px;
+            background-color: rgba(255, 248, 220, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 30px 0; /* 上下留出空间 */
+            min-height: 60vh;
+            box-sizing: border-box;
+            display: flex; /* 使用 flexbox 使左右布局更灵活 */
+            flex-wrap: wrap; /* 允许换行 */
+            justify-content: space-between; /* 使左右两列之间的间距自动调整 */
+        }
+        .left, .right {
+            width: 48%; /* 调整为 48% 以留出间距 */
+            text-align: center;
+            margin-bottom: 20px; /* 为每列底部留出空间 */
+        }
+        .attribute-container {
+            margin: 7vh 0; /* 调整上下的间距 */
+        }
+        .attribute-label {
+            margin-bottom: 8px;
+            font-size: 22px;
+            color: #8b4513;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bolder;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #eee8cd;
+            border: 1px solid #8b4513;
+            border-radius: 19px;
+            overflow: hidden;
+            height: 38px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #a0522d, #d2b48c);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px 0 0 10px;
+        }
+        .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap; /* 允许换行 */
+            justify-content: space-around; /* 使按钮间距更均匀 */
+            width: 100%;
+            background-color: transparent;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+        .button {
+            font-family: CustomFont;
+            font-weight: bold;
+            flex: 1 1 calc(25% - 20px); /* 设置按钮的基础宽度并留出间距 */
+            padding: 10px;
+            background-color: rgba(255, 248, 220, 0.95);
+            color: #8b4513;
+            font-size: 24px;
+            border: 1px solid #8b4513;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px; /* 调整按钮的外边距 */
+            height: 60px;
+        }
+        .button:hover {
+            background-color: #d2b48c;
+        }
+        /* 媒体查询，用于小屏幕调整 */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.5rem; /* 字体缩小 */
+            }
+            .button {
+                font-size: 0.5rem; /* 字体缩小 */
+                margin:0;
+            }
+            .value {
+                font-size: 1rem; /* 字体缩小 */
+            }
+        }
+        /* 动态元素容器 */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 单个叶子的样式 */
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('about_us/image/leaf.png'); /* 替换为叶子图片路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* 提高透明度 */
+    animation: float 10s linear infinite;
+}
+
+/* 添加多个叶子的随机位置、动画时长和延迟 */
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    top: 10%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+    top: 65%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    top: 2%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 0s;
+    top: 80%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+    top: 12%; /* 随机开始位置 */
+}
+
+/* 漂浮动画 */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3; /* 初始透明度 */
+    }
+    50% {
+        opacity: 0.7; /* 漂浮中间时透明度增加 */
+        transform: translateY(50vh) translateX(-10vw); /* 模拟轻微水平偏移 */
+    }
+    100% {
+        transform: translateY(100vh) translateX(10vw);
+        opacity: 0.3; /* 最终透明 */
+    }
+}
+    </style>
+</head>
+<body>
+    <iframe src="../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+<div class="title">属性点数展示</div>
+<div class="floating-elements">
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+</div>
+<div class="container">
+    <div class="left">
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>皇帝好感度</span> <span id="emperor-affection" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="emperor-affection-bar"></div>
+            </div>
+        </div>
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>军事能力</span> <span id="military-capability" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="military-capability-bar"></div>
+            </div>
+        </div>
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>六艺点</span> <span id="six-arts" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="six-arts-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>智慧</span> <span id="wisdom" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="wisdom-bar"></div>
+            </div>
+        </div>
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>声望</span> <span id="reputation" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="reputation-bar"></div>
+            </div>
+        </div>
+        <div class="attribute-container">
+            <div class="attribute-label">
+                <span>才华</span> <span id="talent" class="value">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="talent-bar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="button-group">
+    <button id="continue-game-btn" class="button" onclick="continueGame()">继续游戏</button>
+    <button class="button" onclick="saveGame()">保存存档</button>
+    <button class="button" onclick="loadGame()">读取存档</button>
+    <button class="button" onclick="leaveGame()">退出游戏</button>
+</div>
+
+<script>
+
+function getUsername() {
+    // 从 localStorage 获取当前登录的用户名
+    const username = localStorage.getItem('username');
+
+    if (username) {
+        return username;  // 如果用户名存在，则返回它
+    } else {
+        console.error('未找到登录的用户名');
+        return null;  // 如果用户名不存在，返回 null
+    }
+}
+
+window.onload = function() {
+    const username = getUsername();
+    if (!username) {
+        alert('无法加载用户信息，请重新登录。');
+        window.location.href = '../login.html'; // 返回登录页面
+        return;
+    }
+    
+    // 从 localStorage 中获取点数值
+    const attributes = [
+        { id: 'emperor-affection', key: 'emperorAffection' },
+        { id: 'military-capability', key: 'militaryCapability' },
+        { id: 'six-arts', key: 'sixArts' },
+        { id: 'wisdom', key: 'wisdom' },
+        { id: 'reputation', key: 'reputation' },
+        { id: 'talent', key: 'talent' }
+    ];
+
+    attributes.forEach(attr => {
+        let value = parseInt(localStorage.getItem(`${username}-${attr.key}`)) || 0;
+        document.getElementById(attr.id).innerText = value;
+        document.getElementById(attr.id + '-bar').style.width = value + '%';
+    });
+}
+
+function saveGame() {
+    window.location.href = 'manual_save.html';
+}
+
+function loadGame() {
+    window.location.href = 'view_save.html';
+}
+
+function leaveGame() {
+    const confirmation = confirm("陛下确定要退出游戏吗？");
+    if (confirmation) {
+        window.location.href = 'start.html';
+    }
+}
+
+document.getElementById('continue-game-btn').addEventListener('click', function() {
+    const previousUrl = localStorage.getItem('previousStoryUrl');
+
+    if (previousUrl) {
+        window.location.href = previousUrl;
+    } else {
+        console.error('未找到之前的剧情页面 URL');
+        window.location.href = '../../default-page.html';
+    }
+});
+</script>
+
+</body>
+</html>

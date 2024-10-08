@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>千疆皇途</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style></style>
+    <title>成就</title>
+    <link rel="stylesheet" type="text/css" href="card.css">
+</head>
+<body>
+
+    <a id="home-button" class="home-button" href="#"><<< 返回</a>
+    
+    <div class="wrapper">
+    
+        <header class="htmleaf-header">
+            
+            <a id="" title="返回首页" style="margin-left: 20px;">
+                <!-- <img src="../img/menuBox/home.png" alt="返回主页" style="width: 40px; height: auto;"> -->
+                <h1>成就</h1>
+            </a>
+        </header>
+    
+        <script>
+            window.onload = function () {
+                var index = window.localStorage.userid;
+                var users = JSON.parse(localStorage.getItem('users'));
+
+                console.log('index:', index);  // 确认index的值
+                console.log('users:', users);  // 确认users是否被正确解析
+                console.log('users[index]:', users[index]);  // 确认 users[index] 是否有效
+                console.log('users[index].achi1:', users[index].achi1);
+                console.log('users[index].achi2:', users[index].achi2);
+                console.log('users[index].achi3:', users[index].achi3);
+
+                var i = users[index].achi1;
+                if (i == 1) {
+                    var tmp = document.getElementById('1');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2); ');
+                    document.getElementById('p11').innerHTML = "Achieved";
+                    document.getElementById('p12').innerHTML = "请玩家自行探索";
+                }
+                var i = users[index].achi2;
+                if (i == 1) {
+                    var tmp = document.getElementById('2');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p21').innerHTML = "Achieved";
+                    document.getElementById('p22').innerHTML = "请玩家自行探索";
+                }
+                var i = users[index].achi3+users[index].achi11+users[index].achi12;
+                if (i == 3) {
+                    var tmp = document.getElementById('3');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p31').innerHTML = "Achieved";
+                    document.getElementById('p32').innerHTML = "三项全部调查清楚即可解锁此成就";
+                }
+                var i = users[index].achi14;
+                if (i == 9) {
+                    var tmp = document.getElementById('4');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p41').innerHTML = "Achieved";
+                    document.getElementById('p42').innerHTML = "私通敌国调查失败或调查进度不足2/3即可解锁此成就";
+                }
+
+                var i = users[index].achi5;
+                if (i == 1) {
+                    var tmp = document.getElementById('5');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p51').innerHTML = "Achieved";
+                    document.getElementById('p52').innerHTML = "帮助长公主寻找玉佩即可获得";
+                }
+                var i = users[index].achi6;
+                if (i == 1) {
+                    var tmp = document.getElementById('6');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p61').innerHTML = "Achieved";
+                    document.getElementById('p62').innerHTML = "你在战场上的表现出色，胜利的天平最终倒向了你这一边。";
+                }
+                var i = users[index].achi7;
+                if (i == 1) {
+                    var tmp = document.getElementById('7');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p71').innerHTML = "Achieved";
+                    document.getElementById('p72').innerHTML = "皇帝，太子，四皇子和你最终都下了线，这个天下最终成为了大皇子的囊中之物。";
+                }
+                var i = users[index].achi8;
+                if (i == 1) {
+                    var tmp = document.getElementById('8');
+                    tmp.setAttribute('style', 'width: calc(25% - 1.4rem); margin: 0.7rem;cursor: pointer; filter:brightness(2);');
+                    document.getElementById('p81').innerHTML = "Achieved";
+                    document.getElementById('p82').innerHTML = "在经历重重困难和磨难，你终于成长为一国之君，坐拥天下，千秋万代。"
+                }
+        
+            }
+        </script>
+        <div class="cols">
+            <div id=1 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url('images/burn.jpg')">
+                        <div class="inner">
+                            <p id=p11>Locked</p>
+                            <span>什么？放火烧考场！</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p12 class="backstyle">成就1  <br \>请玩家自行探索</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=2 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/achie2.jpg)">
+                        <div class="inner">
+                            <p id=p21>Locked</p>
+                            <span>结党营私你最行</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p22 class="backstyle">成就2  <br \>请玩家自行探索</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=3 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/person.webp)">
+                        <div class="inner">
+                            <p id=p31>Locked</p>
+                            <span>聪慧过人</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p32 class="backstyle">成就3  <br \>三项全部调查清楚即可解锁此成就</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=4 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/badperson\ .webp)">
+                        <div class="inner">
+                            <p id=p41>Locked</p>
+                            <span>愚钝不堪</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p42 class="backstyle">成就4  <br \>私通敌国调查失败或调查进度不足2/3即可解锁此成就</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=5 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/person1.webp)">
+                        <div class="inner">
+                            <p id=p51>Locked</p>
+                            <span>乐于助人</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p52 class="backstyle">成就5  <br \>帮助长公主寻找玉佩即可获得</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=6 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/person2.webp)">
+                        <div class="inner">
+                            <p id=p61>Locked</p>
+                            <span>英勇杀敌</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p62 class="backstyle">成就6  <br \>你在战场上的表现出色，胜利的天平最终倒向了你这一边。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=7 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/person4.webp)">
+                        <div class="inner">
+                            <p id=p71>Locked</p>
+                            <span>一锅端，全都完蛋啦</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p72 class="backstyle">成就7  <br \>皇帝，太子，四皇子和你最终都下了线，这个天下最终成为了大皇子的囊中之物。</p>
+                        </div>
+                    </div><br \>
+                </div>
+            </div>
+            <div id=8 class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-color:white;background-image: url(images/queen.webp)">
+                        <div class="inner">
+                            <p id=p81>Locked</p>
+                            <span>睥睨天下</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p id=p82 class="backstyle">成就8  <br \>在经历重重困难和磨难，你终于成长为一国之君，坐拥天下，千秋万代。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('home-button').addEventListener('click', function(event) {
+            event.preventDefault();  // 阻止默认的链接跳转行为
+            window.history.back();   // 返回到进入此页面之前的页面
+        });
+    </script>
+
+</html>

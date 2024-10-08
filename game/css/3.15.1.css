@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    background-image: url(../../images/bkg.png);
+    background-size: cover; /* 背景图片覆盖整个页面 */
+    background-repeat: no-repeat; /* 防止背景图片重复 */
+    background-position: center; /* 背景图片居中显示 */
+}
+
+#animatedText {
+    position: absolute;
+    bottom: -50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(127, 48, 39, 1);
+    animation: moveUp 3s forwards;
+    width: 50%;
+    height: 100px;
+    text-align: center;
+    font-family: 'CustomFont', sans-serif; 
+}
+
+
+
+@keyframes moveUp {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 85%;
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'CustomFont'; /* 自定义字体名称 */
+    src: url('../../fonts/字体.ttfs') format('truetype'); /* 使用你上传的字体文件 */
+}

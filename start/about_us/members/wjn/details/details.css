@@ -1,0 +1,119 @@
+/* 通用样式 */
+body {
+    font-family: '楷体';
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* 网页背景色 */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* 左侧背景色 */
+    padding: 20px;
+}
+
+.left-column h2 {
+    font-size: 2em;
+}
+
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.right-column {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.content-box {
+    background-color: #e0e0e0; /* 浅灰背景框 */
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.content-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.content-box p, .content-box ul {
+    font-size: 1.3em;
+    line-height: 1.6;
+    text-indent: 40px;
+}
+
+.content-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content-box ul li {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.content-box ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.content-box ul li a:hover {
+    text-decoration: underline;
+}
+
+.corner-image {
+    position: absolute;
+    top: 10px; /* 根据需要调整距离上边缘的距离 */
+    right: 10px; /* 根据需要调整距离右边缘的距离 */
+    width: 200px; /* 调整图片大小 */
+    height: 150px;
+    border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
+    overflow: hidden; /* 确保图片内容不会溢出边界 */
+}
+
+
+
+
+/* 返回按钮 */
+.return-btn {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333; /* 你可以根据整体风格调整颜色 */
+    background-color: #f4f4f4; /* 按钮的背景颜色 */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #ddd; /* 鼠标悬停时的背景颜色 */
+}

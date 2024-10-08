@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="bkg.png"> 
+</head>
+<body>
+    <iframe src="../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+    <div class="floating-elements"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+    </div>
+    <div id="game-start-page">
+        <div class="title-section" style="text-align: center;">
+            <img src="../images/qjht.png" width="40%">
+        </div>
+        <div class="menu-section">
+            <button class="menu-btn" onclick="startGame()">开始游戏</button>
+            <button class="menu-btn" onclick="loadGame()">读取存档</button>
+            <button class="menu-btn" onclick="viewAchievements()">成就一览</button>
+            <button class="menu-btn" onclick="aboutUs()">关于我们</button>
+        </div>
+    </div>
+    <script src="start.js"></script>
+</body>
+</html>

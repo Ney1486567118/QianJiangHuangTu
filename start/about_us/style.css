@@ -1,0 +1,151 @@
+/* 页面基础样式 */
+@font-face {
+    font-family: 'CustomFont'; /* 给你的字体命名 */
+    src: url('../../fonts/字体2.ttf') format('truetype'); /* 指定字体文件路径和格式 */
+}
+body {
+    font-family: CustomFont, serif;
+    background-image: url('image/bkg.png'); /* 初始背景图 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* 容器样式 */
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 48px;
+    color: #c91b1b; /* 可以根据风格更改颜色 */
+}
+
+/* 按钮网格布局 */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    grid-column-gap: 400px; /* 左右间距 */
+    margin: 50px auto;
+    width: 50%;
+    justify-content: center
+}
+
+/* 按钮样式 */
+.member-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 2px solid #c91b1b;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #F4E1D2;
+    white-space: nowrap; /* 防止文字换行 */
+    width: 350px; /* 可根据需要调整按钮宽度 */
+    font-family: CustomFont, serif;
+    font-size: 135%;
+    font-weight: bold;
+}
+
+/* 返回主页按钮样式 */
+.home-button {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 28px;
+    color: #c91b1b; /* 砖红色 */
+    text-decoration: none; /* 去掉下划线 */
+    font-family:CustomFont, serif; /* 楷体字体 */
+    font-weight: bold; /* 加粗字体 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+
+/* 悬停效果 */
+.member-button:hover {
+    background-color: #c91b1b;
+    color: white;
+}
+
+
+
+
+/* 动态元素容器 */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 单个叶子的样式 */
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('image/leaf.png'); /* 替换为叶子图片路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* 提高透明度 */
+    animation: float 10s linear infinite;
+}
+
+/* 添加多个叶子的随机位置、动画时长和延迟 */
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    top: 10%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+    top: 65%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    top: 2%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 0s;
+    top: 80%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+    top: 12%; /* 随机开始位置 */
+}
+
+/* 漂浮动画 */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3; /* 初始透明度 */
+    }
+    50% {
+        opacity: 0.7; /* 漂浮中间时透明度增加 */
+        transform: translateY(50vh) translateX(-10vw); /* 模拟轻微水平偏移 */
+    }
+    100% {
+        transform: translateY(100vh) translateX(10vw);
+        opacity: 0.3; /* 最终透明 */
+    }
+}
+

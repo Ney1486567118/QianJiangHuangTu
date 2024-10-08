@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column; /* 使内容垂直排列 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column; /* 使内容垂直排列 */
+    align-items: center;
+}
+
+#minesweeper-board {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    grid-template-columns: repeat(10, 40px);
+    justify-content: center;
+    align-content: center;
+}
+
+
+#timer {
+    font-size: 20px;
+    margin-bottom: 10px; /* 间距 */
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #999;
+}
+
+.cell.revealed {
+    background-color: white;
+    cursor: default;
+}
+
+#end-game-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cell.flagged {
+    background-color: #f0f0f0;  /* 或其他适当的颜色 */
+    color: red;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="../css/minigame1.css">
+    </head>
+
+    <body>
+        <div id="game-container">
+            <div id="timer">时间: 0秒</div>
+            <div id="minesweeper-board"></div>
+            <!-- 重新开始和退出按钮区域，取消 display: none -->
+            <div id="end-game-options">
+                <button id="restart-button" onclick="restartGame()">重新开始</button>
+                <button id="exit-button" onclick="exitGame()">退出游戏</button>
+            </div>
+        </div>
+
+        <script src="../JS/minigame3.js"></script>
+    </body>
+</html>

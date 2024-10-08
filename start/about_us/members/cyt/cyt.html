@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>陈奕潼的个人介绍</title>
+    <style>
+        body {
+            background-image: url(背景.jpg);
+            background-size: cover;
+        }
+        div.transbox {
+            width: 1050px;
+            height: auto; /* Adjust height to fit content */
+            margin: 90px 90px;
+            background-color: #ffffff;
+            border: 1px solid #FFFFFF;
+            opacity: 0.8;
+            padding: 20px; /* Add padding to ensure content is not too close to edges */
+        }
+
+        h1 {
+            text-align: center;
+        }
+        h2.ex1, h3.ex1, img.ex1 {
+            margin-left: 5cm;
+        }
+        p {
+            text-align: right;
+            color: mediumpurple;
+        }
+        p.ex1 {
+            margin-right: 2cm;
+        }
+
+        /*cc:change color*/
+        a.cc:visited {
+            color: #0000ff;
+        }
+        a.cc:hover {
+            color: #ffcc00;
+        }
+
+        /* Sticky Note Style */
+        .sticky-note {
+            position: fixed;
+            top: 40%; /* Move the sticky note up */
+            left: 50%;
+            width: 60vw; /* 60% of the viewport width */
+            max-width: 400px; /* Optional: max width for better appearance */
+            padding: 20px;
+            background-color: #ffebee; /* Light pink background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+            line-height: 1.5; /* Increased line spacing */
+            box-sizing: border-box; /* Ensure padding is included in width */
+            transform: translate(-50%, -50%); /* Center the sticky note */
+        }
+        .sticky-note.show {
+            opacity: 1; /* Fade in */
+        }
+
+        /* Sticky Note Image Style */
+        .sticky-note img {
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+            border-radius: 10px; /* Rounded corners */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition for image */
+            opacity: 0; /* Initially hidden */
+        }
+        .sticky-note.show img {
+            opacity: 1; /* Fade in */
+        }
+
+        /* New Text Style */
+        .info-text {
+            font-size: 0.8em; /* Slightly smaller font size */
+            font-weight: normal; /* Not bold */
+            color: #000000; /* Text color */
+            margin-left: 10px; /* Space between image and text */
+            vertical-align: middle; /* Align with the middle of the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="transbox">
+            <h1>个人简介</h1>
+            <img src="头像.jpg" height="50px" width="50px" class="ex1" />
+            <span class="info-text">⬅This is me~</span> <!-- New text added -->
+            <h2 class="ex1">陈奕潼</h2>
+            <h3 class="ex1">小组：先帝创业未半而中道崩组</h3>
+            <h3 class="ex1">专业：数据科学与大数据技术</h3>
+            <h3 class="ex1">学院：计算机学院</h3>
+            <h3 class="ex1"><a class="cc" href="#" onclick="toggleStickyNote()">点击认识我...</a></h3>
+            
+            <p class="ex1">Hello World!</p>
+        </div>
+    </div>
+    <!-- <embed height="50" width="100" src="bgm/Sunburst.mp3"> -->
+
+    <!-- Sticky Note -->
+    <div id="sticky-note" class="sticky-note">
+        hi~我是陈奕潼<br>
+        音乐是比较大的爱好，喜欢唱歌和弹钢琴，听古典音乐也听流行，喜欢邓紫棋，虽然是贵州人但还喜欢粤语歌，
+        还喜欢文学和书法，最欣赏赵孟頫，目前尝试楷书转行书，
+        还有运动，讨厌跑步喜欢游泳，羽毛球乒乓球也经常打<br>
+        不爱奶茶爱果茶 ENFJ ღ( ´･ᴗ･` )
+    </div>
+
+    <script>
+        function toggleStickyNote() {
+            var note = document.getElementById('sticky-note');
+            if (note.classList.contains('show')) {
+                note.classList.remove('show');
+            } else {
+                note.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>

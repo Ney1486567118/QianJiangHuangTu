@@ -1,0 +1,75 @@
+/* 全局样式 */
+@font-face {
+    font-family: CustomFont; /* 给你的字体命名 */
+    src: url('../gu.ttf') format('truetype'); /* 指定字体文件路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* For intro section */
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: CustomFont;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    line-height: 1.8;
+    transition: opacity 1s ease-in-out; /* 为整个页面添加渐变 */
+    opacity: 1; /* 初始透明度为 1 */
+}
+
+#intro-text {
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: CustomFont;
+}
+
+.page {
+    display: none; /* Initially, all pages are hidden */
+}
+
+.sentence {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    margin-bottom: 10px;
+    white-space: nowrap; /* 禁止换行 */
+    font-family: CustomFont;
+}
+
+.skip-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+

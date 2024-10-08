@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <style>
+        body {
+            font-family: "华文行楷", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(255, 230, 240, 0.8) 75%, rgba(200, 255, 200, 0.8) 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1100px;
+            width: 80%;
+            text-align: center;
+            height: auto;
+            position: relative;
+            margin-top: 50px; /* 通过增加 margin-top 来下移白框 */
+        }
+
+        .container img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -110px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .container h1 {
+            font-size: 40px;
+            color: #ff6699;
+            margin-top: 130px;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .container .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .container .social-icons a {
+            text-decoration: none;
+            color: #ff6699;
+            font-size: 26px;
+            transition: color 0.3s;
+        }
+
+        .container .social-icons a:hover {
+            color: #ff3366;
+        }
+
+        .intro-link, .return-link {
+            font-size: 30px;
+            color: #ff6699;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .intro-link:hover, .return-link:hover {
+            color: #ff3366;
+        }
+
+        #page1 .intro-info {
+            margin-top: 180px;
+        }
+    </style>
+    <script>
+        function showIntro() {
+            document.querySelector('#page1').style.display = 'none';
+            document.querySelector('#page2').style.display = 'block';
+        }
+
+        function goBack() {
+            document.querySelector('#page2').style.display = 'none';
+            document.querySelector('#page1').style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 第一页内容 -->
+    <div id="page1" class="container">
+        <img src="yyy.jpg" alt="头像">
+        <div class="intro-info">
+            <p>姓名：尹一伊<br>学院：计算机学院<br>专业：数据科学与大数据<br> 工作职责：剧本编写，视频剪辑</p>
+        </div>
+        <div class="intro-link" onclick="showIntro()">认识我<br>Get to know me</div>
+    </div>
+
+    <!-- 第二页内容 -->
+    <div id="page2" class="container" style="display:none;">
+        <img src="yyy2.0.jpg" alt="个人照片">
+        <h1>尹一伊</h1>
+       <p>爱好特长：喜欢听音乐，尤其是纯音乐和古风音乐，会弹钢琴和古筝, 吹竹笛。<br>
+         喜欢在citywalk的过程中品鉴各种美食。<br> 热爱文学，
+            喜欢打剧本杀。<br>
+            运动方面擅长跳远，偶尔喜欢跑跑步。<br>
+            抽象的第五人格玩家, 偶尔沾点cosplay和二次元。<br>性格：开朗热情，大大咧咧的东北女孩。为人随和，稍有内向但喜欢交朋友，热爱生活。<br>人格：INFP（小蝴蝶）<br>
+            <br>永远相信美好的事情即将发生。</p>
+        <div class="social-icons">
+        </div>
+        <div class="return-link" onclick="goBack()">Go Back</div>
+    </div>
+</body>
+
+</html>

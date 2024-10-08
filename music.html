@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>千疆皇途</title>
+  <script>
+    window.onload = function() {
+        const bgm = document.getElementById('bgm');
+        
+        // 检查 localStorage 中是否有保存的音乐路径和播放时间
+        const savedSrc = localStorage.getItem('bgmSrc');
+        //alert(savedSrc);
+        const savedTime = localStorage.getItem('bgmCurrentTime');
+        
+        if (savedSrc) {
+            bgm.src = savedSrc;  // 使用保存的音乐路径
+        }
+
+        if (savedTime) {
+            bgm.currentTime = savedTime;  // 恢复到保存的播放时间
+        }
+        
+        // 当音乐正在播放时，持续保存播放进度
+        bgm.ontimeupdate = function() {
+            localStorage.setItem('bgmCurrentTime', bgm.currentTime);  // 保存当前播放时间
+        };
+
+        // 监听来自剧情页的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'changeMusic') {
+                const newSrc = event.data.src;
+                const newTime = event.data.currentTime || 0;
+
+                if (newSrc) {
+                    const bgm = document.getElementById('bgm');
+                    bgm.src = newSrc;  // 更换音乐文件
+                    bgm.currentTime = newTime;  // 从指定时间播放
+                    bgm.play();  // 播放新的音乐
+
+                    // 将新的音乐路径保存到 localStorage
+                    localStorage.setItem('bgmSrc', newSrc);
+                    localStorage.setItem('bgmCurrentTime', newTime);  // 保存播放时间为0或指定的时间
+                }
+            } else if (event.data.action === 'playMusic') {
+                const bgm = document.getElementById('bgm');
+    
+                if (event.data.musicUrl) {
+                    bgm.src = event.data.musicUrl;  // 设定新的音乐文件 URL
+                    localStorage.setItem('bgmSrc', bgm.src);
+                    bgm.load();  // 加载新的音乐文件
+                }
+    
+                // 检查是否需要重置当前播放时间
+                if (event.data.resetTime) {
+                    bgm.currentTime = 0;  // 将播放时间重置为 0
+                }
+
+                // 尝试播放音乐
+                const playPromise = bgm.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        //alert("音乐播放成功！");
+                    }).catch(error => {
+                        alert("音乐播放失败，可能是浏览器禁止了自动播放。", error);
+                    });
+                }
+            }
+        });
+    };
+</script>
+</head>
+<body>
+    <audio id="bgm" autoplay loop>
+      <source src="../../bgm/gumeng.mp3" type="audio/mp3">
+  </audio>
+</body>
+</html>

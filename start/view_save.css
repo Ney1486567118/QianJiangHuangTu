@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'CustomFont'; /* 自定义字体名称 */
+    src: url('../fonts/字体2.ttf') format('truetype'); /* 使用你上传的字体文件 */
+}
+
+
+body {
+    font-family: CustomFont;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../images/bkg.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    /*overflow-y: auto; */
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 3rem;
+    color: #c91b1b; /* 可以根据风格更改颜色 */
+    text-align: center;
+    margin-top: 7vh;
+}
+
+/* 容器样式 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 0;
+    max-height: calc(100vh - 60px);
+
+    padding: 10px;
+    /* overflow-y: scroll; */
+}
+
+
+/* 按钮网格布局 */
+.button-grid {
+    display: grid;
+    gap: 20px; /* 确保间距一致 */
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 90%;
+    min-width: 90%;
+}
+
+/* 调整存档按钮的最大宽度和最大高度 */
+.save-button {
+    display: flex;
+    flex-direction: column; /* 使内容从上到下排列 */
+    justify-content: flex-start; /* 确保内容从顶部开始排列 */
+    align-items: center;
+    width: 90%;
+    max-width: 750px; 
+    height: auto; 
+    min-height: 300px;
+    padding: 1.5rem; 
+    font-size: 1.2rem;
+    border: 2px solid #c91b1b;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #F4E1D2;
+    text-align: center;
+    font-family: CustomFont;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+
+.save-button-content {
+    display: flex;
+    justify-content: space-between; /* 分左右两边 */
+    width: 100%; /* 确保内容占满宽度 */
+    margin-top: 0.5rem; /* 给标题与内容之间留出一些空间 */
+}
+
+.save-info {
+    width: 65%; /* 文字部分宽度为65% */
+    text-align: left;
+}
+
+.save-image {
+    width: 35%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px;
+}
+
+.save-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 5px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 存档时间和标题文本 */
+.save-time, .save-title-text {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.save-button-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.3rem; /* 给标题和内容留出一些间距 */
+    width: 100%;
+}
+
+/* 存档属性样式 */
+.save-attribute {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.attribute-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 使内容分为两列 */
+    row-gap: 0px; /* 减少行间距 */
+    column-gap: 0px; /* 保持列间距 */
+    text-align: left; /* 确保文字在每一列中对齐 */
+}
+
+.attribute-grid p {
+    margin: 10px; 
+    line-height: 1.2; 
+    white-space: nowrap;
+}
+
+
+/* 返回主页按钮样式 */
+.home-button {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    font-size: 1.75rem;
+    color: #c91b1b; /* 砖红色 */
+    text-decoration: none; /* 去掉下划线 */
+    font-family: CustomFont;
+    font-weight: bold; /* 加粗字体 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+
+
+/* 动态元素容器 */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 单个叶子的样式 */
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('about_us/image/leaf.png'); /* 替换为叶子图片路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* 提高透明度 */
+    animation: float 10s linear infinite;
+}
+
+/* 添加多个叶子的随机位置、动画时长和延迟 */
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    top: 10%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+    top: 65%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    top: 2%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 0s;
+    top: 80%; /* 随机开始位置 */
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+    top: 12%; /* 随机开始位置 */
+}
+
+/* 漂浮动画 */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3; /* 初始透明度 */
+    }
+    50% {
+        opacity: 0.7; /* 漂浮中间时透明度增加 */
+        transform: translateY(50vh) translateX(-10vw); /* 模拟轻微水平偏移 */
+    }
+    100% {
+        transform: translateY(100vh) translateX(10vw);
+        opacity: 0.3; /* 最终透明 */
+    }
+}

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="../css/tem_narration.css"> 
+        <link rel="stylesheet" href="../css/pause.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+    
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                background-image: url('../../images/rain.webp'); /* 改改改！ 背景图片 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;
+                animation: fadeIn 1s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="pause-btn" class="pause-btn" src="../../images/pause.png" alt="Pause">
+
+        <iframe src="../../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+
+        <!-- 对话框 -->
+        <div class="dialogue-box">
+            <p id="dialogue-text"></p>
+        </div>
+
+        <script src="../js/tem_narration.js"></script> <!-- 改改改！ -->
+
+        <script src="../js/pause.js"></script> 
+        <script src="../js/auto_save.js"></script>
+        <script src="../../bootstrap/js/bootstrap.min.js"></script> <!-- 引用本地 Bootstrap JS 文件 -->
+    </body>
+</html>

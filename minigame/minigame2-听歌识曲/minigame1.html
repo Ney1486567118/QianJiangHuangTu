@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <style>
+        /* 导入古风字体 */
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+        @font-face {
+            font-family: 'CustomFont'; /* 自定义字体名称 */
+            src: url('../../fonts/字体2.ttf') format('truetype'); /* 使用你上传的字体文件 */
+        }
+        @font-face {
+            font-family: 'special'; /* 自定义字体名称 */
+            src: url('../../fonts/字体.ttf') format('truetype'); /* 使用你上传的字体文件 */
+        }
+
+        body {
+            font-family: 'CustomFont', serif;
+            background: #e8f5e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 添加背景图片和模糊效果 */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../images/cjxtbkg2.webp') no-repeat center center; /* 背景图片路径 */
+            background-size: cover;
+            opacity: 0.6; /* 调整透明度 */
+            filter: blur(6px); /* 调整模糊度 */
+            z-index: -1;
+        }
+
+        .container {
+            position:relative;
+            min-height: 400px;
+            min-width: 950px; /* 加宽容器 */
+            padding: 30px;
+            background: rgba(245, 255, 250, 0.85); /* 半透明白色背景 */
+            border: 2px solid #8db38b;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            background-image: url('../../images/cjxtbkg2.webp'); /* 选择题框框的背景图片路径 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1{
+            color: #2e7d32;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        h2{
+            color: #2e7d32;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #score {
+            font-size: 16px;
+            color: #2e7d32;
+            background-color: #e0f2f1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #8db38b;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            margin: 10px auto; /* 改为居中对齐 */
+            padding: 10px 20px; /* 调整选项内边距 */
+            border: 2px solid #8db38b;
+            border-radius: 10px;
+            background-color: rgba(240, 255, 245, 0.9); /* 半透明背景 */
+            color: #2e7d32;
+            cursor: pointer;
+            font-size: 18px;
+            width: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left; /* 左对齐选项文本 */
+            display: none; /* 默认隐藏选项按钮 */
+            font-family: 'CustomFont', serif; /* 古风字体 */
+        }
+
+        .option.centered { 
+            display: block; /* 在游戏开始后显示选项 */
+            text-align: center; /* 居中对齐 */
+        }
+
+        .option:hover {
+            background-color: #a5d6a7;
+        }
+
+        #result {
+            margin: 20px 0;
+            font-size: 22px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .start-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 2px solid #8db38b;
+            border-radius: 10px;
+            background-color: #e0f2f1;
+            color: #2e7d32;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'CustomFont', serif; /* 古风字体 */
+        }
+
+        .start-button:hover {
+            background-color: #a5d6a7;
+        }
+
+        .audio-controls {
+            margin: 20px 0;
+        }
+
+        .audio-controls button {
+            padding: 10px 20px;
+            border: 2px solid #8db38b;
+            border-radius: 10px;
+            background-color: #e0f2f1;
+            color: #2e7d32;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .audio-controls button:hover {
+            background-color: #a5d6a7;
+        }
+
+        .skip-button {
+            position: absolute; /* 绝对定位 */
+            top: 10px; /* 距离容器顶部 10px */
+            right: 10px; /* 距离容器右边 10px */
+            padding: 10px 15px;
+            border: transparent;
+            border-radius: 5px;
+            background-color:transparent; /* 背景颜色 */
+            color: #2e7d32;
+            font-size: 18px; /* 字体大小 */
+            cursor: pointer;
+            font-family: 'CustomFont', serif; /* 古风字体 */
+            transition: background-color 0.3s;
+        }
+
+        .skip-button:hover {
+            background-color: #e0e0e0; /* 悬停时背景色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="score">正确答案：0/15</div>
+        <h1>曲韵探幽</h1>
+        <h2>答对10题即可成功游戏，加油吧！</h2>
+        <!-- 跳过题目按钮 -->
+        <button id="skipQuestion" class="skip-button">>>></button>
+
+        <!-- 选项按钮 -->
+        <button class="option" data-answer="A">A. 选项1</button>
+        <button class="option" data-answer="B">B. 选项2</button>
+        <button class="option" data-answer="C">C. 选项3</button>
+        <button class="option" data-answer="D">D. 选项4</button>
+
+        <!-- 结果显示区域 -->
+        <div id="result"></div>
+
+        <!-- 开始游戏按钮 -->
+        <button id="startGame" class="start-button">开始游戏</button>
+
+        <!-- 音频控件 -->
+        <audio id="audio" controls style="display: none;">
+            <source id="audioSource" src="" type="audio/mpeg">
+            您的浏览器不支持音频元素。
+        </audio>
+    </div>
+
+    <script>
+        document.getElementById("startGame").addEventListener("click", function() {
+            // 开始游戏后，显示选项按钮并添加居中样式
+            let options = document.querySelectorAll(".option");
+            options.forEach(function(option) {
+                option.classList.add("centered");
+            });
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

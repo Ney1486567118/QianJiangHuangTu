@@ -1,0 +1,17 @@
+.pause-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%; /* 让图片保持圆形 */
+    object-fit: cover;
+}
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

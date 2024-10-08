@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'CustomFont'; /* 自定义字体名称 */
+    src: url('../../fonts/字体2.ttf') format('truetype'); /* 使用你上传的字体文件 */
+}
+@font-face {
+    font-family: 'special'; /* 自定义字体名称 */
+    src: url('../../fonts/字体.ttf') format('truetype'); /* 使用你上传的字体文件 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 背景固定 */
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'CustomFont', sans-serif; /* 全局字体设置为自定义字体 */
+}
+
+/* 对话框样式 */
+.dialogue-box {
+    position: absolute;
+    bottom: 2vh;
+    left: 1vw;
+    width: 98vw;
+    height: 20vh;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    background-color: rgba(243, 226, 191, 0.5);
+    box-shadow: 
+        rgba(0, 0, 0, 0.3) 2px 8px 8px,  /* 原来的下方阴影 */
+        rgba(0, 0, 0, 0.2) -2px -2px 5px; /* 新增的上方阴影 */
+    z-index: 999;
+    font-family: 'CustomFont', sans-serif; /* 对话框字体设置为自定义字体 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中对齐内容 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+/* 插入图片样式 */
+.dialogue-box::before {
+    content: ''; /* 必须的内容属性 */
+    width: 15vw; /* 图片占据对话框的15%宽度 */
+    height: 100%; /* 高度填满对话框 */
+    background: url('../../images/qjht.png') no-repeat center; /* 替换为你的图片路径 */
+    z-index: 10;
+    background-size: contain; /* 保持图片比例 */
+    margin-right: 1.5rem; /* 图片和文字之间的间距 */
+    display: block; /* 作为块级元素显示 */
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+
+/* 文字内容样式 */
+#dialogue-text {
+    font-size: 1.8rem; 
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    margin: 0;
+    font-family: 'CustomFont', sans-serif; 
+    font-weight: 1000;
+    flex: 1; 
+    overflow: hidden; 
+}
+
+/* 响应式调整 */
+@media (max-width: 767.98px) {
+    #dialogue-text {
+        font-size: 1.2rem; /* 小屏幕下字体大小缩小 */
+    }
+    #dialog {
+        height: 25%; /* 小屏幕下对话框高度增大 */
+    }
+}
+
+.person {
+    margin-right: 10%;
+    margin-top: 5%;
+    position: fixed;
+    right: 0;
+    transition: opacity 0.5s ease-in-out; /* 平滑过渡 */
+    z-index: 1;
+    bottom: 20vh;
+}
+
+
+.person-left {
+    left: 0;
+    right: auto;
+    margin-left: 15%;
+    z-index: 1;
+}
+
+.personn {
+    width: auto;
+    height: 70vh;
+}
+
+.character-name-box {
+    position: absolute;
+    bottom: 15vh; /* 对话框的上方 */
+    left: -11vw; /* 左边与对话框对齐 */
+    width: 45vw; /* 增加宽度再放大一倍 */
+    height:28vh; /* 增加高度再放大一倍 */
+    background: url('../../images/xmk.webp') no-repeat center; /* 使用外部图片作为背景 */
+    background-size: contain; /* 使图片保持比例并适应框大小 */
+    z-index: 1000; /* 确保它显示在对话框之上 */
+    text-align: center;
+    border-top-right-radius: 1.5rem; /* 增加圆角效果 */
+    display: flex; /* 使用Flexbox布局来居中对齐文字 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 确保内容在圆角边框内 */
+    color: rgba(127, 48, 39, 1);
+    opacity: 0.9; /* 调节背景图片的透明度 */
+    font-size: 2.5rem; /* 使用 rem 单位以便在不同屏幕下自适应 */
+    font-family: 'special', sans-serif; /* 角色名称字体设置为自定义字体 */
+    padding-top: 10px;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

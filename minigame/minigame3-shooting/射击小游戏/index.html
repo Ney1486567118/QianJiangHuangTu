@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="volume-control">
+        <button id="volume-button">🔊</button>
+        <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" style="display:none;">
+    </div>
+
+    <div id="exit-button">⏩</div>
+
+
+    <div id="start-screen">
+        <h1>射击游戏</h1>
+        <div id="options-container">
+            <button id="intro-btn">游戏介绍</button>
+            <button id="start-btn">开始游戏</button>
+        </div>
+    </div>
+
+    <audio id="background-music" src="Immediate Music - Electric Romeo.mp3" type="audio/mpeg" loop autoplay></audio>
+    <!-- <audio id="shoot-sound" src="shoot-sound.mp3" type="audio/mpeg"></audio> -->
+    
+
+    <script>
+        var backgroundMusic = document.getElementById('background-music');
+        var shootSound = document.getElementById('shoot-sound');
+
+        // 游戏开始时播放背景音乐
+        backgroundMusic.play();
+
+        // 点击目标时播放射击音效
+        target.addEventListener('click', function() {
+            shootSound.play();
+            // 其他逻辑
+        });
+    </script>
+
+
+    <div id="game-intro" style="display: none;">
+        <h2>游戏介绍</h2>
+        <p>欢迎来到射击游戏！在这里，你将挑战三个关卡，每个关卡都需要在规定时间内完成特定的射击任务。</p>
+        <p>每个关卡均为30s,上方设置有您的得分和剩余的时间</p>
+        <p>每射中一次盾牌加一分</p>
+        <p>第一关的过关条件为10分</p>
+        <p>第二关的过关条件为15分</p>
+        <p>第三关的过关条件为20分</p>
+        <p>三关都挑战成功即为胜利</p>
+        <p>准备好了吗？点击开始游戏进入第一关卡。</p>
+        <button id="back-btn">返回</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <div id="status-board">
+            <div id="score-board">得分: 0</div>
+            <div id="timer-board">时间: 60</div>
+        </div>
+        <div id="target"></div>
+    </div>
+
+    <div id="achievement-message" style="display: none;">
+        <p>恭喜您达成成就：“吾射不亦精乎”</p>
+        <p>按空格结束游戏</p>
+    </div>
+
+    <div id="game-over" style="display: none;">
+        <p>你未能完成关卡目标。游戏失败。</p>
+        <button id="restart-btn">再次挑战</button>
+        <button id="end-btn">结束游戏</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

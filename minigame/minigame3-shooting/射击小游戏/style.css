@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50;
+    font-family: 'Arial', 'SimSun', 'Microsoft YaHei', sans-serif;
+    background-image: url('sj.webp'); /* 在此处插入背景图片的URL */
+    background-size: cover;
+    background-position: center;
+    color: #ecf0f1;
+    }
+    
+    #start-screen, #game-intro, #achievement-message, #game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(44, 62, 80, 0.85); /* 半透明背景 */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    }
+    
+    #options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    h1, h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    }
+    
+    button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    color: #ecf0f1;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    button:hover {
+    background-color: #c0392b;
+    }
+    
+    #game-container {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    }
+    
+    #status-board {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    padding: 10px 0;
+    }
+    
+    #score-board, #timer-board {
+    margin: 0 20px;
+    }
+    
+    #target {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('bz.png'); /* 在此处插入射击目标图片的URL */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    }
+    
+    #volume-control {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000; /* 确保音量控制在页面上方 */
+    }
+    
+    #volume-button {
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    #volume-slider {
+        width: 100px;
+        margin-top: 10px;
+    }
+    
+    #exit-button {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 1000;
+        font-size: 24px;
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    #exit-button:hover {
+        background-color: #c0392b;
+    }
+    

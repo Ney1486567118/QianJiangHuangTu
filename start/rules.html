@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'KaiTi', serif;
+            background-image: url("../images/rules-background.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 保持背景固定 */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 60%;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border: 2px solid #8B4513;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background: #8B4513;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .button-container a:hover {
+            background: #A0522D;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+    <div class="container">
+        <h1>登基之路</h1>
+        <p>登基之路漫漫，你需要同时达到以下目标：</p>
+        <p>1. <strong>基础六艺掌握</strong>：10点</p>
+        <p>2. <strong>皇帝认可度</strong>：10点——关系到是否会废掉二皇子太子之位重立你为太子</p>
+        <p>3. <strong>智慧</strong>：10点——需要足够的智慧处理皇宫内复杂的人物关系和一国事务</p>
+        <p>4. <strong>军事能力</strong>：10点——军关乎国泰民安</p>
+        <p>5. <strong>才华</strong>：10点——你可别当蠢皇帝</p>
+        <p>6. <strong>声望</strong>：10点——做个贤君吧</p>
+        <p><em>PS：“六艺”是中国古代教育体系中的核心内容，指的是以下六种学科：</em></p>
+        <p><strong>礼</strong>：礼仪和礼节的规范。</p>
+        <p><strong>乐</strong>：音乐和舞蹈的艺术。</p>
+        <p><strong>射</strong>：射箭技术。</p>
+        <p><strong>御</strong>：驾驭马车的技巧。</p>
+        <p><strong>书</strong>：书法和文书处理。</p>
+        <p><strong>数</strong>：数学和计算。</p>
+        <p>你的每一个选择和实践中的表现都会影响着最终的结果，这一世，努力登上皇位吧！</p>
+        <div class="button-container">
+            <a href="../game/html/1.1.html">我已了解，开始游戏</a>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            resetGameData(); // 在页面加载时重置游戏数据
+        };
+
+        function resetGameData() {
+            // 获取当前用户的用户名
+            const username = localStorage.getItem('username');
+            if (!username) {
+                alert('无法找到用户名，请重新登录');
+                return;
+            }
+
+            // 清除玩家的自动存档数据
+            localStorage.removeItem(`${username}_autoSave`);
+
+            // 将各个数值归零
+            const attributes = [
+                'emperorAffection',
+                'militaryCapability',
+                'sixArts',
+                'wisdom',
+                'reputation',
+                'talent'
+            ];
+
+            attributes.forEach(attr => {
+                localStorage.setItem(`${username}-${attr}`, 0); // 将数值重置为 0
+            });
+
+            // alert('游戏数据已重置，准备开始游戏');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="intro/style.css">
+        <style>
+            @font-face {
+                font-family: 'CustomFont'; /* 给你的字体命名 */
+                src: url('../../fonts/字体2.ttf') format('truetype'); /* 指定字体文件路径和格式 */
+            }
+            body{
+                font-family: 'CustomFont';
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="musicIframeContainer" style="display:none;"></div>
+
+        <!-- Intro Section -->
+
+        <div id="intro" class="intro-section">
+            <div id="intro-text">
+                <div class="page">
+                    <div class="sentence">加载中……</div>
+                </div>
+
+                <div class="page">
+                    <div class="sentence">请单击屏幕空白处以播放背景音乐</div>
+                </div>
+
+                <!-- 第一段 -->
+                <div class="page">
+                    <div class="sentence">脑海中混沌一片，四维虚无，好似悬空不受力，又如坠于万丈深空。</div>
+                    <div class="sentence">飘飘忽忽，浑浑噩噩，犹如胎卵之中，如梦如醒。</div>
+                </div>
+    
+                <!-- 第二段 -->
+                <div class="page">
+                    <div class="sentence">【 …… 醒来吧 …… 】</div>
+                </div>
+    
+                <!-- 第三段 -->
+                <div class="page">
+                    <div class="sentence">冥冥中有箴言，魂灵中倏忽多出了些什么，又仿佛本就在那里，浑然一体。</div>
+                    <div class="sentence">那是一种温暖却又复杂的力量，包含了许多从未有过的奇怪念头，丝丝缕缕。</div>
+                    <div class="sentence">让人想哭，想笑，会痛，会伤，渐渐沉浸，相互消融。</div>
+                </div>
+    
+                <!-- 第四段 -->
+                <div class="page">
+                    <div class="sentence">【人有三魂七魄，魂飞而人死，魄散则身灭，</div>
+                    <div class="sentence">昔日吾座下一扫酒童子，蒙冤遭罚投生为人，一去已历几世流离颠簸。</div>
+                    <div class="sentence">如今冤罪昭雪，乃召其返归吾座下。</div>
+                    <div class="sentence">吾闻童子祈告甚切，言其仍有难舍之执，又观其此世七魄犹存。</div>
+                    <div class="sentence">汝本异世之人，只因机缘相合，时限所迫，故借汝三魂，得复其生。</div>
+                    <div class="sentence">此非自然之法，福兮祸兮，皆由汝运筹掌握】</div>
+                </div>
+            </div>
+            <button class="skip-btn" onclick="skipIntro()">>>></button>
+        </div>
+
+        <script>
+            document.addEventListener('click', function() {
+                const iframeContainer = document.getElementById('musicIframeContainer');
+                
+                // 如果没有插入 iframe，点击时创建并插入 iframe
+                if (!iframeContainer.innerHTML) {
+                    iframeContainer.innerHTML = '<iframe src="music.html" style="display:none;" id="musicPlayerIframe"></iframe>';
+                }
+    
+                const iframe = document.getElementById('musicPlayerIframe');
+                
+                iframe.onload = function() {
+                    //alert("iframe 已加载");
+                    
+                    // 使用 postMessage 触发 music.html 内的播放事件
+                    iframe.contentWindow.postMessage({
+                        action: 'playMusic',
+                        musicUrl: '../../bgm/gumeng.mp3',  // 这里是你想要的初始音乐
+                        resetTime: true                  // 是否重置到起始时间
+                    }, '*');
+                };
+            }, { once: true });
+        </script>
+        <script src="intro/script.js"></script>
+    </body>
+</html>

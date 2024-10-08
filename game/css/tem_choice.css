@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'CustomFont'; /* 自定义字体名称 */
+    src: url('../../fonts/字体2.ttf') format('truetype'); /* 使用你上传的字体文件 */
+}
+@font-face {
+    font-family: 'special'; /* 自定义字体名称 */
+    src: url('../../fonts/字体.ttf') format('truetype'); /* 使用你上传的字体文件 */
+}
+
+.options-container {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 水平居中 */
+    width: 100%; /* 使容器宽度占满整个页面 */
+    max-width: 1000px; /* 设置容器最大宽度 */
+    padding: 20px; /* 给按钮外围添加内边距 */
+}
+
+.option-btn {
+    width: 500px; /* 按钮宽度 */
+    height: 80px; /* 按钮高度 */
+    margin: 25px; /* 按钮之间的间距 */
+    padding: 10px; /* 内边距 */
+    font-size: 1.5em;
+    background-image: url('../../images/op.webp'); /* 使用外部图片作为选择框背景 */
+    background-size: cover; /* 使图片覆盖整个按钮区域 */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 150% 120%;
+    border-radius: 50px; 
+    color: #eacdb7; /* 文字颜色 */
+    background-color: transparent;
+    cursor: pointer;
+    transition: opacity 0.3s ease, color 0.3s ease; /* 使用透明度过渡效果替代背景颜色 */
+    font-family: 'KaiTi', serif;
+    white-space: nowrap;
+    border: none; /* 移除边框 */
+    outline: none; /* 移除默认的按钮轮廓 */
+}
+
+.option-btn:hover {
+    opacity: 0.8; /* 鼠标悬停时使图片变暗 */
+}
+
+
+
+.dialogue-box {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    width: 98%;
+    height: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(243, 226, 191, 0.5);
+    box-shadow: 
+        rgba(0, 0, 0, 0.3) 2px 8px 8px,  /* 原来的下方阴影 */
+        rgba(0, 0, 0, 0.2) -2px -2px 5px; /* 新增的上方阴影 */
+    z-index: 999;
+    font-family: 'CustomFont', sans-serif; /* 对话框字体设置为自定义字体 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中对齐内容 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+/* 插入图片样式 */
+.dialogue-box::before {
+    content: ''; /* 必须的内容属性 */
+    width: 15%; /* 图片占据对话框的15%宽度 */
+    height: 100%; /* 高度填满对话框 */
+    background: url('../../images/qjht.png') no-repeat center; /* 替换为你的图片路径 */
+    z-index: 10;
+    background-size: contain; /* 保持图片比例 */
+    margin-right: 15px; /* 图片和文字之间的间距 */
+    display: block; /* 作为块级元素显示 */
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+
+/* 文字内容样式 */
+#dialogue-text {
+    font-size: 2.0rem; /* 使用 rem 单位以便在不同屏幕下自适应 */
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    margin: 0;
+    font-family: 'CustomFont', sans-serif; /* 文字字体设置为自定义字体 */
+    font-weight: 1000;
+    flex: 1; /* 文字部分占据剩余空间 */
+    overflow: hidden; /* 确保文字内容不溢出对话框 */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="../css/tem_narration.css"> 
+        <link rel="stylesheet" href="../css/pause.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+    
+        <style>
+            html, body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                background-image: url('../../images/gy.png'); /* 改改改！ 背景图片 */
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;
+                animation: fadeIn 1s ease-in-out;
+            }
+                        /* 蒙层背景 */
+/* 弹窗蒙层背景 */
+.custom-modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 10000; /* 确保在所有元素上方显示 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 弹窗内容 */
+.custom-modal-content {
+    background-color: rgba(243, 226, 191, 0.95); /* 半透明与对话框颜色一致 */
+    border-radius: 15px; /* 圆角 */
+    padding: 2rem;
+    width: 80vw;
+    max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px, rgba(0, 0, 0, 0.2) -2px -2px 5px;
+    font-family: 'CustomFont', sans-serif;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s ease; /* 淡入效果 */
+}
+
+/* 弹窗标题 */
+.custom-modal-title {
+    font-size: 2rem;
+    color: rgb(50, 50, 50); /* 深灰色标题文字 */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* 弹窗正文 */
+.custom-modal-text {
+    font-size: 1.4rem;
+    color: rgb(0, 0, 0); /* 黑色正文 */
+    margin-bottom: 2rem;
+}
+
+/* 按钮样式 */
+.custom-modal-btn {
+    background-color: rgba(113, 89, 49, 0.9); /* 古风棕色调 */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'CustomFont', sans-serif;
+}
+
+.custom-modal-btn:hover {
+    background-color: rgba(113, 89, 49, 1); /* 鼠标悬停时的效果 */
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+        </style>
+    </head>
+
+    <body>
+        <img id="pause-btn" class="pause-btn" src="../../images/pause.png" alt="Pause">
+        <iframe src="../../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+        <!--
+        <button id="pause-btn" class="pause-btn">
+            <img src="path_to_your_image.png" alt="Pause">
+        </button>
+        -->
+
+        <!-- 对话框 -->
+        <div class="dialogue-box">
+            <p id="dialogue-text"></p>
+        </div>
+        <div id="custom-modal" class="custom-modal">
+            <div class="custom-modal-content">
+                <h2 class="custom-modal-title">成就解锁！</h2>
+                <p class="custom-modal-text">结党营私你最行</p>
+                <button id="close-modal-btn" class="custom-modal-btn">继续</button>
+            </div>
+        </div>
+        <script src="../js/3.14.1.js"></script> <!-- 改改改！ -->
+
+        <script src="../js/pause.js"></script> 
+        <script src="../js/auto_save.js"></script>
+        <script src="../../bootstrap/js/bootstrap.min.js"></script> <!-- 引用本地 Bootstrap JS 文件 -->
+    </body>
+</html>

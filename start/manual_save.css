@@ -1,0 +1,226 @@
+/* 页面基础样式 */
+body {
+    font-family: "楷体", serif;
+    background-image: url('about_us/image/bkg.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+
+/* 标题样式 */
+h1 {
+    font-size: 2.8rem;
+    color: #c91b1b; /* 可以根据风格更改颜色 */
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 容器样式 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.button-grid {
+    display: grid;
+    gap: 20px; /* 确保间距一致 */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.save-button {
+    display: flex;
+    flex-direction: column; /* 使内容从上到下排列 */
+    justify-content: flex-start; /* 确保内容从顶部开始排列 */
+    align-items: center;
+    width: 90%;
+    width: 750px; 
+    height: 350px; 
+    padding: 1.5rem; 
+    font-size: 1.2rem;
+    border: 2px solid #c91b1b;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #F4E1D2;
+    text-align: center;
+    font-family: "楷体", serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 20px;
+    overflow: hidden;
+}
+
+/* 保存按钮的文字部分 */
+.save-info {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+    font-size: 1rem;
+}
+
+/* 保存按钮的图片部分 */
+.save-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 属性网格显示 */
+.attribute-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+    grid-gap: 10px;
+    font-size: 0.9rem;
+}
+
+/* 媒体查询，适应小屏幕设备 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .save-slot-btn {
+        flex-direction: column; /* 小屏幕下纵向排列文字和图片 */
+        align-items: flex-start;
+    }
+
+    .save-image {
+        margin-top: 10px;
+    }
+}
+
+/* 返回主页按钮样式 */
+.home-button {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 1.75rem;
+    color: #c91b1b; /* 砖红色 */
+    text-decoration: none; /* 去掉下划线 */
+    font-family: "楷体", serif; /* 楷体字体 */
+    font-weight: bold; /* 加粗字体 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-body p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+}
+
+
+/* 动态元素容器 */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 叶子样式，保持与view_save一致 */
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('about_us/image/leaf.png'); /* 替换为叶子图片路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    animation: float 10s linear infinite;
+}
+
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    top: 10%;
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+    top: 65%;
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    top: 2%;
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 0s;
+    top: 80%;
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+    top: 12%;
+}
+
+/* 漂浮动画 */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(50vh) translateX(-10vw);
+    }
+    100% {
+        transform: translateY(100vh) translateX(10vw);
+        opacity: 0.3;
+    }
+}
+

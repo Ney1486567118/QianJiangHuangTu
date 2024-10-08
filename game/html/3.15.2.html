@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+    <title>千疆皇途</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont'; /* 给你的字体命名 */
+            src: url('../../fonts/字体2.ttf') format('truetype'); /* 指定字体文件路径和格式 */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'CustomFont', serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: url('../../images/bkg.png'); /* 替换为你的背景图片路径 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0; /* 初始状态设置为透明 */
+            transition: opacity 2s ease-in; /* 设置淡入效果，持续时间为2秒 */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  /* 让容器的高度占满视口 */
+        }
+
+        /* 左侧人物图像 */
+        .character-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .character-image img {
+            width: 80%;
+            height: 80%;
+        }
+
+        /* 右侧文本和按钮区域 */
+        .ending-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 2px solid #8B4513;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 70%;
+            height: 80%;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            margin-right: 100px;
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .story {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.87);
+            flex-grow: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            background-color: transparent;
+            color:#bda417;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color:transparent;
+            transform: scale(1.05);
+            text-shadow: 0 0 8px #FFD700; /* 发光效果 */
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <iframe src="../../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+    <div class="container">
+        <!-- 左侧人物图片 -->
+        <div class="character-image">
+            <img src="../../images/villager.webp" alt="人物图像"> <!-- 替换为你的人物图像路径 -->
+        </div>
+
+        <!-- 右侧故事和按钮区域 -->
+        <div class="ending-card">
+            <h1 class="title">结局</h1><br>
+            <h1 class="title">很遗憾</h1>
+            <p class="story">
+                考场突然燃起了熊熊大火<br>
+                数十学子命丧考场<br>
+                作为主考官的你难辞其咎<br>
+                被贬为平民<br>
+                彻底与皇位无缘<br>
+            </p>
+            <div class="buttons">
+                <button class="btn" onclick="restartGame()">重启人生</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载后触发的事件，淡入效果开始
+        window.onload = function() {
+            document.body.style.opacity = 1;
+        }
+
+        function restartGame() {
+            window.location.href = '../../start/start.html'; // 跳转到游戏开始页面
+        }
+
+        function exitGame() {
+            alert("请手动关闭窗口或导航到您的主页。");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千疆皇途</title>
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="view_save.css">
+</head>
+<body>
+    <iframe src="../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+    <div class="floating-elements">
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+    </div>
+    
+    <a id="home-button" class="home-button" href="#"><<< 返回</a>
+
+    <h1>我的存档</h1>
+    <div class="container">
+        <div class="row button-grid">
+            <div class="col-12 col-md-6 mb-3">
+                <button id="auto-save-button" class="save-button">
+                    自动存档<br>时间: 2024-08-30<br>标题: 故事开始<br>
+                </button>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <button id="saveSlot0" class="save-button" >手动存档<br>时间: 2024-08-30<br>标题: 第二章<br></button>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <button id="saveSlot1" class="save-button" >手动存档<br>时间: 2024-08-30<br>标题: 第三章<br></button>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <button id="saveSlot2" class="save-button" >手动存档<br>时间: 2024-08-30<br>标题: 第四章<br></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const iframe = document.getElementById('musicPlayerIframe');
+            if (iframe) {
+                //alert("Iframe element found.");
+            } else {
+                alert("Iframe element not found.");
+            }
+        });
+    </script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="view_save.js"></script>
+</body>
+</html>

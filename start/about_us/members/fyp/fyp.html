@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> <!-- 引用本地 Bootstrap 文件 -->
+    <title>范一朴的个人主页</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+        display: flex;
+        justify-content: center;  /* 水平居中 */
+        align-items: center;      /* 垂直居中 */
+        height: 100vh;        
+    }
+    .fyp{
+        display: block;
+        unicode-bidi: isolate;
+    }
+    .top-wrapper {
+        position: fixed;
+        top:0;
+        z-index: 3;
+        width: 100%;
+        background:rgba(212, 208, 208, 0.8);
+    }
+    .top-wrapper span{
+        float: left;
+        margin-top: 15px;
+        margin-left: 18px;
+        padding-left: 8px;
+        border-left: 3px solid #323232;
+        height: 18px;
+        font-size: 18px;
+        color:black;
+        line-height: 18px;
+    }
+    .top-wrapper a{
+        position: relative;
+        height: 100%;
+        line-height: 48px;
+        float: right;
+        color:blue;
+        margin-right: 23px;
+        cursor: pointer;
+        font-family: KaiTi;
+        font-size: 18px;
+        text-decoration: none;
+        transition:0.5s;
+    }
+    .top-wrapper a:hover {
+        color: blue;
+        font-weight: bold;
+    }
+    .main-wrapper {
+        width: 75%;
+        margin: 72px auto 24px auto;
+        clear: both;
+    }
+    .leeft {
+        position: relative;
+        float: left;
+        width: 30%;
+        height: 612px;
+        text-align: center;
+        border: #a3a4ac;
+        border-radius: 15px;
+        box-shadow: 2px 2px 5px #aaa;
+        background-color: rgba(255, 255, 255,0.5);
+    }
+    .profile-img{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .leeft p{
+        margin: 40px;
+        font-size: 25px;
+    }
+    .intro{
+        margin-top: 50px;
+        font-weight: bolder;
+    }
+    .leeft a{
+        text-decoration: none;
+        transition:0.5s;
+        color:#106ebe;
+    }
+    .leeft a:hover{
+        color: blue;
+        font-weight: bolder;
+    }
+    .riight {
+        position: relative;
+        float: right;
+        width: 67%;
+        height: 612px;
+        text-align: center;
+        border: #a3a4ac;
+        border-radius: 15px;
+        box-shadow: 2px 2px 5px #aaa;
+        background-color: rgba(255, 255, 255,0.5);
+    }
+    .riight p{
+        line-height:5px;
+        font-size: larger;
+        padding:15px;
+    }
+    .riight img{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .bottom{
+        width: 100%;
+        position: fixed;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        padding:0;
+        padding-top: 1px;
+        background-color: rgba(255, 255, 255,0.8);
+    }
+    .bottom p{
+        margin:6px auto;
+    }
+</style>
+<body>
+    <div class="fyp">
+    <div class="top-wrapper">
+        <span>个人页面</span>
+        <a href="../../about_us.html">返回主页</a>
+    </div>
+    <div class="main-wrapper">
+        <div class="leeft">
+            <img src="images/fyp.jpg" alt="范一朴的照片" class="profile-img">
+            <hr width="80%" size="2"/>
+            <h1>范一朴</h1>
+            <p class="intro">概要</p>
+            <p><a href="detail/inter.html">兴趣爱好</a></p>
+            <p><a href="detail/chara.html">性格品格</a></p>
+        </div>
+        <div class="riight">
+            <img src="images/guitar.jpg" width="25%">
+            <p align="left">担任技术总监</p>
+            <p align="left">喜欢吃饭，喜欢练字，喜欢看书，喜欢有挑战性的事</p>
+            <p align="left">喜欢玩第五人格，尤其是求生者祭司，擅长控场和打洞</p>
+            <p align="left">喜欢喂鱼、散步、养植物、看大鹅、最近喜欢弹电吉他，喜欢唱歌</p>
+            <p align="left">运动方面喜欢游泳，喜欢骑车</p>
+            <p align="left">mbti: ENFP</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <p align="center"><small>&copy; 版 权 所 有 <a href="mailto:1120232986@bit.edu.cn">1120232986@bit.edu.cn</a></small></p> 
+    </div>
+   
+    </div>
+</body>
+</html>

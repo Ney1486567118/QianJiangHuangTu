@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>千疆皇途</title>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> <!-- 引入 Bootstrap -->
+        <link rel="stylesheet" href="../css/pause.css">
+
+        <link rel="stylesheet" href="../css/tem_choice.css"> <!-- 改改改！-->
+        
+        <style>
+            body {
+                background-color: #f7f1e5;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url('../../images/syj.webp'); /* 改改改！背景图片 */
+                background-size: cover; /* 图片覆盖整个网页 */
+                background-position: center; /* 居中显示 */
+            }
+        </style>
+    </head>
+    
+    <body>
+        <img id="pause-btn" class="pause-btn" src="../../images/pause.png" alt="Pause">
+        
+        <iframe src="../../music.html" style="display:none;" id="musicPlayerIframe"></iframe>
+
+        <div class="options-container">
+            <div id="options" class="options text-center"> <!-- 使用 Bootstrap 居中 -->
+                <button class="option-btn" onclick="selectOption('太子二哥看起来不胜酒力啊')">太子二哥看起来不胜酒力啊</button>
+                <button class="option-btn" onclick="selectOption('太子二哥还是少喝点酒吧')">太子二哥还是少喝点酒吧</button>
+                
+
+            </div>
+        </div>
+
+        <!-- 对话框 -->
+        <div class="dialogue-box" onclick="nextScene()">
+            <p id="dialogue-text"></p>
+        </div>
+
+        <script src="../js/5.2.js"></script> <!-- 改改改！-->
+
+        <script src="../js/pause.js"></script>
+        <script src="../js/auto_save.js"></script>
+        <script src="../../bootstrap/js/bootstrap.min.js"></script> <!-- 引用本地 Bootstrap JS 文件 -->
+    </body>
+</html>
